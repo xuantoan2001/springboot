@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.0/examples/cover/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Shop Homepage - Start Bootstrap Template</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" th:href="@{/web/assets/favicon.ico}" />
+    <!-- Bootstrap icons-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link th:href="@{/web/css/styles.css}" rel="stylesheet" />
+
+</head>
+
+<body>
+
+
+        <nav class="navbar navbar-expand-lg navbar-light bg-light" th:replace="page_layout_web/navbar :: navbar"></nav>
+
+        <header class="bg-purple py-5" th:replace="page_layout_web/header :: header"></header>
+
+        <section class="py-5" layout:fragment="main-content"></section>
+
+        <footer class="mastfoot mt-auto" th:replace="page_layout_web/footer :: footer"></footer>
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script th:src="@{/web/js/scripts.js}"></script>
+</body>
+</html>

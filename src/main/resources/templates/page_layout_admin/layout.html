@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.0/examples/cover/ -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>SB Admin 2 - Dashboard</title>
+
+    <!-- Custom fonts for this template-->
+    <link th:href="@{/admin/vendor/fontawesome-free/css/all.min.css}" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
+            rel="stylesheet">
+
+    <!-- Custom styles for this template-->
+    <link th:href="@{/admin/css/sb-admin-2.min.css}" rel="stylesheet">
+</head>
+
+<body id="page-top">
+
+<!-- Page Wrapper -->
+<div id="wrapper">
+    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar" th:replace="page_layout_admin/sidebar :: sidebar"></ul>
+
+    <div id="content-wrapper" class="d-flex flex-column">
+        <!-- Main Content -->
+        <div id="content">
+            <nav class="navbar navbar-expand navbar-light bg-white topbar mb-4 static-top shadow" th:replace="page_layout_admin/navbar :: navbar"></nav>
+            <!-- Begin Page Content -->
+            <div class="container-fluid" layout:fragment="main-content"></div>
+        </div>
+        <footer class="sticky-footer bg-white" th:replace="page_layout_admin/footer :: footer"></footer>
+    </div>
+</div>
+<!-- Bootstrap core JavaScript-->
+<script th:src="@{/admin/vendor/jquery/jquery.min.js}"></script>
+<script th:src="@{/admin/vendor/bootstrap/js/bootstrap.bundle.min.js}"></script>
+
+<!-- Core plugin JavaScript-->
+<script th:src="@{/admin/vendor/jquery-easing/jquery.easing.min.js}"></script>
+
+<!-- Custom scripts for all pages-->
+<script th:src="@{/admin/js/sb-admin-2.min.js}"></script>
+
+<!-- Page level plugins -->
+<script th:src="@{/admin/vendor/chart.js/Chart.min.js}"></script>
+
+<!-- Page level custom scripts -->
+<script th:src="@{/admin/js/demo/chart-area-demo.js}"></script>
+<script th:src="@{/admin/js/demo/chart-pie-demo.js}"></script>
+</body>
+</html>
