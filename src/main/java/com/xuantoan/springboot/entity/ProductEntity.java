@@ -1,7 +1,14 @@
 package com.xuantoan.springboot.entity;
 
+import com.xuantoan.springboot.utils.FileReadUtils;
+
 import javax.persistence.*;
-import java.util.Collection;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.List;
+
+import static com.xuantoan.springboot.config.Common.PATH_IMAGE;
 
 @Entity
 @Table(name = "product")
@@ -31,9 +38,10 @@ public class ProductEntity extends BaseEntity{
 
     @OneToMany(mappedBy = "product",
             cascade = CascadeType.ALL,
+            fetch = FetchType.LAZY,
             orphanRemoval = true
     )
-    private Collection<CommentEntity> comments;
+    private List<CommentEntity> comments = new ArrayList<>();
 
 
     public String getProductName() {
@@ -73,6 +81,7 @@ public class ProductEntity extends BaseEntity{
     }
 
     public void setProductImage(String productImage) {
+
         this.productImage = productImage;
     }
 
@@ -92,17 +101,18 @@ public class ProductEntity extends BaseEntity{
         this.rate = rate;
     }
 
-    public Collection<CommentEntity> getComments() {
+    public List<CommentEntity> getComments() {
         return comments;
     }
 
-    public void setComments(Collection<CommentEntity> comments) {
+    public void setComments(List<CommentEntity> comments) {
         this.comments = comments;
     }
 
+
     public ProductEntity() {
     }
-    public ProductEntity(String productName, CategoryEntity category, String description, Double price, String productImage, Long quantity, Integer rate, Collection<CommentEntity> comments) {
+    public ProductEntity(String productName, CategoryEntity category, String description, Double price, String productImage, Long quantity, Integer rate, List<CommentEntity> comments) {
         this.productName = productName;
         this.category = category;
         this.description = description;
@@ -112,4 +122,5 @@ public class ProductEntity extends BaseEntity{
         this.rate = rate;
         this.comments = comments;
     }
+
 }

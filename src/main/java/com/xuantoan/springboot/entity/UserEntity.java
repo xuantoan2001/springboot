@@ -22,7 +22,7 @@ public class UserEntity extends BaseEntity{
     private String avatar;
 
     @OneToMany(mappedBy = "user",
-            cascade = CascadeType.ALL,
+            cascade = CascadeType.REMOVE,
             orphanRemoval = true
     )
     private Collection<CommentEntity> comments;
